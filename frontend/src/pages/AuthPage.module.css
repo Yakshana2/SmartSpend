@@ -1,0 +1,43 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--primary);
+  font-weight: 500;
+}

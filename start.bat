@@ -1,0 +1,2 @@
+start cmd /k "cd /d E:\Yakshana-AI\Kiro\SmartSpend\ss1\SmartSpend && .venv311\Scripts\activate && uvicorn backend.main:app --reload"
+start cmd /k "cd /d E:\Yakshana-AI\Kiro\SmartSpend\ss1\SmartSpend\frontend && npm run dev"

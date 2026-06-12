@@ -1,0 +1,29 @@
+import axios from 'axios'
+
+const api = axios.create({
+  baseURL: '/api',
+})
+
+// Attach token on every request
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
+
+// On 401, clear token and fire an event — AuthContext handles the redirect
+api.interceptors.response.use(
+  (res) => res,
+  (err) => {
+    if (err.response?.status === 401) {
+      localStorage.removeItem('token')
+      // Dispatch event instead of hard redirect — keeps React context alive
+      window.dispatchEvent(new Event('auth:logout'))
+    }
+    return Promise.reject(err)
+  }
+)
+
+export default api
